@@ -1,0 +1,93 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+  }
+  
+  .navbar .logo {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /* Hamburger menu styling */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+  }
+  
+  /* Responsive styling */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #333;
+    }
+  
+    .navbar .nav-links li {
+      margin: 15px 0;
+      text-align: center;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+}
+  
+.nav-links.active {
+    display: flex;
+}
+
+.hamburger.active span {
+    display: none; /* Hide all spans when active */
+}
+
+.hamburger.active::before {
+    content: 'X';
+    display: block;
+    font-size: 30px; /* Adjust size as needed */
+    line-height: 50px; /* Center the X vertically, adjust as needed */
+    text-align: center; /* Center the X horizontally */
+    color: white; /* Adjust color as needed */
+}
+
